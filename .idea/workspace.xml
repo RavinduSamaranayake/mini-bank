@@ -4,11 +4,72 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d247b819-2afd-4b5c-9037-6bd92fee4d6f" name="Changes" comment="" />
+    <list default="true" id="d247b819-2afd-4b5c-9037-6bd92fee4d6f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/scala/com/kushan/bank/actors/Bank.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/mini-bank-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/mini-bank-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/mini-bank.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/mini-bank.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/kushan/bank/actors/PersistentBankAccount.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/kushan/bank/actors/PersistentBankAccount.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/kushan/bank/domain/Command.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/kushan/bank/domain/Command.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/kushan/bank/domain/Event.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/kushan/bank/domain/Event.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/kushan/bank/domain/Response.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/kushan/bank/domain/Response.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/kushan/bank/domain/model/BankAccount.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/kushan/bank/domain/model/BankAccount.scala" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="SBT">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="mini-bank" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="mini-bank" type="f1a62948:ProjectNode" />
+                <item name="mini-bank" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="mini-bank" type="f1a62948:ProjectNode" />
+                <item name="mini-bank-build" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="mini-bank" type="f1a62948:ProjectNode" />
+                <item name="mini-bank-build" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -20,12 +81,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
