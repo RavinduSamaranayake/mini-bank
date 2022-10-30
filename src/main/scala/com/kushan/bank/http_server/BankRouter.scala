@@ -10,11 +10,13 @@ import de.heikoseeberger.akkahttpcirce.FailFastCirceSupport._
 import akka.actor.typed.scaladsl.AskPattern._
 import akka.http.scaladsl.server.Route
 import akka.util.Timeout
+import cats.data.Validated.{Invalid, Valid}
 import com.kushan.bank.domain.Command.GetBankAccount
 import com.kushan.bank.domain.Response.{BankAccountBalanceUpdatedResponse, BankAccountCreatedResponse, GetBankAccountResponse}
 import com.kushan.bank.domain.{Command, Response}
 import com.kushan.bank.domain.http.Request.{BankAccountCreationRequest, BankAccountUpdateRequest}
 import com.kushan.bank.domain.http.Response.FailureResponse
+import com.kushan.bank.http_server.Validation.{Validator, validateEntity}
 
 import scala.concurrent.Future
 import scala.concurrent.duration._
@@ -36,6 +38,15 @@ class BankRouter(bank: ActorRef[Command])(implicit system: ActorSystem[_]) {
   def updateBankAccount(id: String, request: BankAccountUpdateRequest): Future[Response] =
     bank.ask(replyTo => request.toCommand(id, replyTo))
 
+  def validateRequest[R: Validator](request: R)(routeIfValid: Route): Route =
+    validateEntity(request) match {
+      case Valid(_) =>
+        routeIfValid
+      case Invalid(failures) =>
+        complete(StatusCodes.BadRequest, FailureResponse(failures.toList.map(_.errorMessage).mkString(", ")))
+    }
+
+
 
   val routes: Route =
     pathPrefix("bank") {
@@ -47,12 +58,14 @@ class BankRouter(bank: ActorRef[Command])(implicit system: ActorSystem[_]) {
         post {
           // parse the payload
           entity(as[BankAccountCreationRequest]) { request =>
-            onSuccess(createBankAccount(request)) {
-              // send back an HTTP response
-              case BankAccountCreatedResponse(id) =>
-                respondWithHeader(Location(s"/bank/$id")) {
-                  complete(StatusCodes.Created)
-                }
+            validateRequest(request) { // <-- added here
+              onSuccess(createBankAccount(request)) {
+                // send back an HTTP response
+                case BankAccountCreatedResponse(id) =>
+                  respondWithHeader(Location(s"/bank/$id")) {
+                    complete(StatusCodes.Created)
+                  }
+              }
             }
           }
         }
@@ -74,11 +87,13 @@ class BankRouter(bank: ActorRef[Command])(implicit system: ActorSystem[_]) {
                   3 Send back an HTTP response.*/
             put {
               entity(as[BankAccountUpdateRequest]) { request =>
-                onSuccess(updateBankAccount(id, request)) {
-                  case BankAccountBalanceUpdatedResponse(Success(account)) =>
-                    complete(account)
-                  case BankAccountBalanceUpdatedResponse(Failure(ex)) =>
-                    complete(StatusCodes.BadRequest, FailureResponse(s"${ex.getMessage}"))
+                validateRequest(request) { // <-- added here
+                  onSuccess(updateBankAccount(id, request)) {
+                    case BankAccountBalanceUpdatedResponse(Success(account)) =>
+                      complete(account)
+                    case BankAccountBalanceUpdatedResponse(Failure(ex)) =>
+                      complete(StatusCodes.BadRequest, FailureResponse(s"${ex.getMessage}"))
+                  }
                 }
               }
             }

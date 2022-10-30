@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d247b819-2afd-4b5c-9037-6bd92fee4d6f" name="Changes" comment="Created Actor test playground">
+    <list default="true" id="d247b819-2afd-4b5c-9037-6bd92fee4d6f" name="Changes" comment="Completed HTTP rest End points">
+      <change afterPath="$PROJECT_DIR$/src/main/scala/com/kushan/bank/http_server/Validation.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/kushan/bank/BankApp.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/kushan/bank/BankApp.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/kushan/bank/domain/http/Request.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/kushan/bank/domain/http/Request.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/kushan/bank/http_server/BankRouter.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/kushan/bank/http_server/BankRouter.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +57,11 @@
     </system>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -140,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667106043724</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Completed HTTP rest End points">
+      <created>1667115404653</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667115404653</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,6 +172,7 @@
     <MESSAGE value="Created main bank actor" />
     <MESSAGE value="Created HTTP server" />
     <MESSAGE value="Created Actor test playground" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Actor test playground" />
+    <MESSAGE value="Completed HTTP rest End points" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed HTTP rest End points" />
   </component>
 </project>
